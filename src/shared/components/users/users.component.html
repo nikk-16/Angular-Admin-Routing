@@ -1,0 +1,31 @@
+<h1 class="d-flex align-items-center align-content-center m-5" style="display:flex ; align-content: center;">Users Information</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">User Id</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Lastname</th>
+            <th scope="col">Contact</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Age</th>
+            <th scope="col">Email Adderss</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let data of userData">
+            <th scope="row">{{data.userId}}</th>
+            <td>{{data.firstName}}</td>
+            <td>{{data.lastName}}</td>
+            <td>{{data.contact}}</td>
+            <td>{{data.gender}}</td>
+            <td>{{data.age}}</td>
+            <td>{{data.email}}</td>
+            <td><a class="btn btn-primary" role="button" [routerLink]="['/Users/View', data.userId]">View</a></td>
+            <td><a class="btn btn-danger" role="button" [routerLink]="['/Users/edit', data.userId]">Edit</a></td>
+        </tr>
+    </tbody>
+</table>
+<h1 style="padding-left: 90.5%;"><a class="btn btn-success rounded-3" role="button" routerLink='/Users/create'>Create</a></h1>
+<router-outlet></router-outlet>
